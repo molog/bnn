@@ -1,0 +1,46 @@
+# files to exclude from source control
+
+#use glob syntax
+syntax: glob
+
+
+
+
+# EXCLUDE STANDARD FILE TYPES
+*.pyc
+*.rar
+*.bat
+*.orig
+*.old
+
+# EXCLUDE MIGRATIONS
+*/migrations/*
+
+.metadata/*
+
+# EXCLUDE SETTINGS LOCAL
+*/settings_local.py
+
+
+# EXCLUDE IDE FILES
+.project
+.pydevproject
+*.settings*
+*.komodoproject
+
+
+# EXCLUDE DIRECTORIES ON SERVER
+bnn.wsgi
+
+
+# EXCLUDE VIRTUALENV DIRECTORIES
+Include/*
+Lib/*
+Scripts/*
+build/*
+
+
+bnn/site_media/
+
+# EXCLUDE BACKUP FILES
+*~
