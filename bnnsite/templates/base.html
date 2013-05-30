@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE|default:"en-us" }}" xml:lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+	<link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+	{% block extrastyle %}{% endblock %}
+	
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-2.0.1.min.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js"></script>
+	{% block extrahead %}{% endblock %}
+	
+</head>
+
+<body>
+
+<div class="container">
+{% block container %}{% endblock %}
+</div>
+
+</body>
+</html>
