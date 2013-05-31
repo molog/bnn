@@ -43,7 +43,11 @@ def add_slip(request):
     return render(request, 'add_slip.html', {'form': form})
 
 
-
+@login_required
+def history(request):
+    slips = PaymentSlip.objects.all()
+    return render(request, 'history.html', {'slips':slips})
+    
 
 
 
