@@ -4,5 +4,27 @@
 
 
 {% block content %}
-<h4>Hisotry</h4>
+{% load endless %}
+{% paginate 20 slips %}
+
+<h4>History</h4>
+<table class="table table-hover">
+	<tr>
+		<th>Payer</th>
+		<th>Date</th>
+		<th>Notes</th>
+		<th>Amount</th>
+	</tr>
+	{% for p in slips %}
+	<tr>
+		<td>{{ p.user.first_name }}</td>
+		<td>{{ p.paid_date|date:"d/m D" }}</td>
+		<td>{{ p.notes }}</td>
+		<td>{{ p.total_amount }}</td>
+	</tr>
+	{% endfor %}
+
+</table>
+{% show_pages %}
+ 
 {% endblock %}
