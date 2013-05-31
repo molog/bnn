@@ -9,7 +9,6 @@
 <h4>This Week:</h4>
 <table class="table table-hover">
 	<tr>
-		<th>#</th>
 		<th>Payer</th>
 		<th>Date</th>
 		<th>Notes</th>
@@ -17,16 +16,14 @@
 	</tr>
 	{% for p in this_week_slips %}
 	<tr>
-		<td>{{ forloop.counter }}</td>
 		<td>{{ p.user.first_name }}</td>
-		<td>{{ p.paid_date|date:"d/m/y D" }}</td>
+		<td>{{ p.paid_date|date:"d/m D" }}</td>
 		<td>{{ p.notes }}</td>
 		<td>{{ p.total_amount }}</td>
 	</tr>
 	{% endfor %}
 	<tr>
 		<th>Total</th>
-		<td></td>
 		<td></td>
 		<td></td>
 		<th>{{ this_week_sum }}</th>
@@ -36,7 +33,6 @@
 <h4>Last Week:</h4>
 <table class="table table-hover">
 	<tr>
-		<th>#</th>
 		<th>Payer</th>
 		<th>Date</th>
 		<th>Notes</th>
@@ -44,16 +40,14 @@
 	</tr>
 	{% for p in last_week_slips %}
 	<tr>
-		<td>{{ forloop.counter }}</td>
 		<td>{{ p.user.first_name }}</td>
-		<td>{{ p.paid_date|date:"d/m/y D" }}</td>
+		<td>{{ p.paid_date|date:"d/m D" }}</td>
 		<td>{{ p.notes }}</td>
 		<td>{{ p.total_amount }}</td>
 	</tr>
 	{% endfor %}
 	<tr>
 		<th>Total</th>
-		<td></td>
 		<td></td>
 		<td></td>
 		<th>{{ last_week_sum }}</th>

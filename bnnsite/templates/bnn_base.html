@@ -8,8 +8,8 @@
 {% block container %}
 
 <div id="branding" style="margin:0px;background-color: rgb(30, 138, 204);height:40px;line-height: 40px; color:#fff;">
-     <div style="float:left;margin-left:20px;font-size: large;">BNN Expenditure Management System</div>
-    <div class="visible-desktop" style="float:right;margin-right:10px;">{% now "jS F Y" %}</div>
+     <div style="float:left;margin-left:20px;font-size: large;">BNN 勤俭持家</div>
+    <div class="hidden-phone" style="float:right;margin-right:10px;">{% now "jS F Y" %}</div>
 </div>
 
 <div id="messages">
@@ -31,7 +31,7 @@
       <li><a href="#">Overview</a></li>
       <li class="visible-phone"><a href="/accounts/logout/"><i class="icon-off"></i> Logout</a></li>
     </ul>
-    <ul class="nav pull-right visible-desktop">
+    <ul class="nav pull-right hidden-phone">
       <li><a href="#">{{ user.first_name }}</a></li>
       <li><a href="/accounts/logout/"><i class="icon-off"></i> Logout</a></li>
     </ul>
