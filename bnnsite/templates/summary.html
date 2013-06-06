@@ -28,6 +28,14 @@
 		<td></td>
 		<th>{{ this_week_sum }}</th>
 	</tr>
+	{% for user in this_week_user_sums %}
+	<tr>
+		<td>{{ user.profile__nick_name }}</td>
+		<td></td>
+		<td></td>
+		<td>{{ user.sum }}</td>
+	</tr>
+	{% endfor %}
 </table>
 
 <h4>Last Week:</h4>
@@ -52,5 +60,13 @@
 		<td></td>
 		<th>{{ last_week_sum }}</th>
 	</tr>
+	{% for user in last_week_user_sums %}
+	<tr>
+		<td>{{ user.profile__nick_name }}</td>
+		<td></td>
+		<td></td>
+		<td>{{ user.sum }}</td>
+	</tr>
+	{% endfor %}
 </table>
 {% endblock %}

@@ -15,7 +15,7 @@ class House(models.Model):
 class BnnProfile(models.Model):
     user = models.OneToOneField(User)
     house = models.ForeignKey(House)
-    nick_name = models.CharField(max_length=100, blank=True)
+    nick_name = models.CharField(max_length=20)
     
     def __unicode__(self):
         return self.nick_name if self.nick_name else self.user.__unicode__()
