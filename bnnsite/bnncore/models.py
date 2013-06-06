@@ -21,7 +21,6 @@ class BnnProfile(models.Model):
         return self.nick_name if self.nick_name else self.user.__unicode__()
 
 class PaymentSlip(models.Model):
-    user = models.ForeignKey(User)
     profile = models.ForeignKey(BnnProfile, null=True)
     total_amount = models.DecimalField(max_digits=6, decimal_places=2)
     paid_date = models.DateField(default=datetime.date.today())

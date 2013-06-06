@@ -16,7 +16,7 @@
 	</tr>
 	{% for p in this_week_slips %}
 	<tr>
-		<td>{{ p.user.first_name }}</td>
+		<td>{{ p.profile }}</td>
 		<td>{{ p.paid_date|date:"d/m D" }}</td>
 		<td>{{ p.notes }}</td>
 		<td>{{ p.total_amount }}</td>
@@ -40,7 +40,7 @@
 	</tr>
 	{% for p in last_week_slips %}
 	<tr>
-		<td>{{ p.user.first_name }}</td>
+		<td>{{ p.profile }}</td>
 		<td>{{ p.paid_date|date:"d/m D" }}</td>
 		<td>{{ p.notes }}</td>
 		<td>{{ p.total_amount }}</td>

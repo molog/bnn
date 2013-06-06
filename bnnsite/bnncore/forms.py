@@ -7,5 +7,5 @@ from models import PaymentSlip
 class PaymentSlipForm(forms.ModelForm):
     class Meta:
         model = PaymentSlip
-        exclude = ('user')
+        exclude = ('profile')
         

@@ -31,7 +31,7 @@ def add_slip(request):
         form = PaymentSlipForm(request.POST)
         if form.is_valid():
             slip = form.save(commit=False)
-            slip.user = request.user
+            slip.profile = request.user.bnnprofile
             slip.save()
             messages.add_message(request, messages.SUCCESS, 'Payment slip successfully added')
             return HttpResponseRedirect(reverse('summary'))
