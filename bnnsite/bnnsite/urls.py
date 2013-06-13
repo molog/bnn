@@ -24,4 +24,5 @@ urlpatterns += patterns('bnncore.views',
     url(r'^add_slip$', 'add_slip', name='add_slip'),
     url(r'^history', 'history', name='history'),
     url(r'^edit_profile', 'edit_profile', name='edit_profile'),
+    url(r'^house_settings', 'house_settings', name='house_settings'),
 )

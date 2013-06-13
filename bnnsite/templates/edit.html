@@ -3,11 +3,11 @@
 {% block extrastyle %}
 {% endblock %}
 	
-{% block title %}Edit Profile{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 
 {% block content %}
-<h4>Edit Profile</h4>
+<h4>{{ title }}</h4>
 <form method="post">{% csrf_token %}
 
 	{{ form.as_p }}

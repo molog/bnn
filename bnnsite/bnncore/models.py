@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 
 class House(models.Model):
     name = models.CharField(max_length=100)
+    weekly_spending_warning = models.PositiveIntegerField(blank=True, default=500)
     
     def __unicode__(self):
         return self.name
