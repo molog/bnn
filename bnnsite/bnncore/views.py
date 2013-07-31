@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.db.models import Sum, Q
 
-from models import PaymentSlip
+from models import PaymentSlip, BnnProfile
 from forms import PaymentSlipForm, BnnProfileForm, HouseForm
 
 
@@ -64,8 +64,9 @@ def add_slip(request):
 
 @login_required
 def history(request):
-    slips = PaymentSlip.objects.all()
-    return render(request, 'history.html', {'slips':slips})
+    slips = PaymentSlip.objects.filter(profile__house=request.user.bnnprofile.house)
+    user_sums = BnnProfile.objects.annotate(sum=Sum('paymentslip__total_amount'))
+    return render(request, 'history.html', {'slips':slips, 'user_sums':user_sums})
     
 
 

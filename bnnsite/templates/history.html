@@ -8,6 +8,20 @@
 {% paginate 20 slips %}
 
 <h4>History</h4>
+<table class="table">
+	<tr>
+		<th>Payer</th>
+		<th>Sum</th>
+	</tr>
+	{% for user in user_sums %}
+		<tr>
+			<td>{{ user }}</td>
+			<td>{{ user.sum }}</td>
+		</tr>
+	{% endfor %}
+</table>
+
+
 <table class="table table-hover">
 	<tr>
 		<th>Payer</th>
