@@ -24,7 +24,7 @@ class BnnProfile(models.Model):
 class PaymentSlip(models.Model):
     profile = models.ForeignKey(BnnProfile, null=True)
     total_amount = models.DecimalField(max_digits=6, decimal_places=2)
-    paid_date = models.DateField(default=datetime.date.today())
+    paid_date = models.DateField(default=datetime.date.today)
     created_date = models.DateTimeField(auto_now_add=True, editable=False)
     notes = models.TextField()
     
